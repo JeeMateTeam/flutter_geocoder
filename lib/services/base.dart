@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:geocoder/model.dart';
+import 'package:flutter_geocoder/model.dart';
 
 abstract class Geocoding {
 
