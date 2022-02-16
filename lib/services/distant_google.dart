@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'dart:core';
 import 'dart:io';
 
-import 'package:geocoder/model.dart';
-import 'package:geocoder/services/base.dart';
+import 'package:flutter_geocoder/model.dart';
+import 'package:flutter_geocoder/services/base.dart';
 
 /// Geocoding and reverse geocoding through requests to Google APIs.
 class GoogleGeocoding implements Geocoding {
