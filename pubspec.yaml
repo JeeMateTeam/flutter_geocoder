@@ -17,5 +17,4 @@ flutter:
         package: com.aloisdeniel.geocoder
         pluginClass: GeocoderPlugin
       ios:
-        package: com.aloisdeniel.geocoder
         pluginClass: GeocoderPlugin
