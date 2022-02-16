@@ -1,4 +1,4 @@
-name: geocoder
+name: flutter_geocoder
 description: Forward and reverse geocoding.
 version: 0.3.0
 homepage: https://github.com/aloisdeniel/flutter_geocoder
@@ -12,5 +12,9 @@ dependencies:
 
 flutter:
   plugin:
-    androidPackage: com.aloisdeniel.geocoder
-    pluginClass: GeocoderPlugin
+    android:
+      package: com.aloisdeniel.geocoder
+      pluginClass: GeocoderPlugin
+    ios:
+      package: com.aloisdeniel.geocoder
+      pluginClass: GeocoderPlugin
