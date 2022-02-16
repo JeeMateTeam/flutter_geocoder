@@ -1,6 +1,6 @@
-import 'package:geocoder/services/base.dart';
-import 'package:geocoder/services/distant_google.dart';
-import 'package:geocoder/services/local.dart';
+import 'package:flutter_geocoder/services/base.dart';
+import 'package:flutter_geocoder/services/distant_google.dart';
+import 'package:flutter_geocoder/services/local.dart';
 
 export 'model.dart';
 
