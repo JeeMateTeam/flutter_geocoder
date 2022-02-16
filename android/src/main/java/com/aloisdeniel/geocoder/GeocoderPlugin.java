@@ -13,6 +13,9 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
 
+import androidx.annotation.NonNull;
+
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
@@ -29,7 +32,7 @@ class NotAvailableException extends Exception {
 /**
  * GeocoderPlugin
  */
-public class GeocoderPlugin implements MethodCallHandler {
+public class GeocoderPlugin implements MethodCallHandler, FlutterPlugin {
 
   private Geocoder geocoder;
 
@@ -41,12 +44,23 @@ public class GeocoderPlugin implements MethodCallHandler {
   /**
    * Plugin registration.
    */
-  public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "github.com/aloisdeniel/geocoder");
-    channel.setMethodCallHandler(new GeocoderPlugin(registrar.context()));
-  }
+//  public static void registerWith(Registrar registrar) {
+//    final MethodChannel channel = new MethodChannel(registrar.messenger(), "github.com/aloisdeniel/geocoder");
+//    channel.setMethodCallHandler(new GeocoderPlugin(registrar.context()));
+//  }
 
-  // MethodChannel.Result wrapper that responds on the platform thread.
+    @Override
+    public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+        final MethodChannel channel = new MethodChannel(binding.getBinaryMessenger(), "github.com/aloisdeniel/geocoder");
+        channel.setMethodCallHandler(new GeocoderPlugin(binding.getApplicationContext()));
+    }
+
+    @Override
+    public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
+
+    }
+
+    // MethodChannel.Result wrapper that responds on the platform thread.
   private static class MethodResultWrapper implements Result {
     private Result methodResult;
     private Handler handler;
