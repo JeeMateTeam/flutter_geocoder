@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:geocoder/model.dart';
-import 'package:geocoder/services/base.dart';
+import 'package:flutter_geocoder/model.dart';
+import 'package:flutter_geocoder/services/base.dart';
 
 
 /// Geocoding and reverse geocoding through built-lin local platform services.
