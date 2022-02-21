@@ -41,6 +41,9 @@ public class GeocoderPlugin implements MethodCallHandler, FlutterPlugin {
     this.geocoder = new Geocoder(context);
   }
 
+  public GeocoderPlugin(){
+  }
+
   /**
    * Plugin registration.
    */
@@ -51,6 +54,8 @@ public class GeocoderPlugin implements MethodCallHandler, FlutterPlugin {
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+        this.geocoder = new Geocoder(binding.getApplicationContext());
+
         final MethodChannel channel = new MethodChannel(binding.getBinaryMessenger(), "github.com/aloisdeniel/geocoder");
         channel.setMethodCallHandler(new GeocoderPlugin(binding.getApplicationContext()));
     }
